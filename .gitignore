@@ -1,0 +1,33 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]uild/
+x64/
+x86/
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.log
+*.tlog
+*.ipch
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+
+# CMake and cache
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Others
+*.VC.db
+*.VC.opendb
+*.db
