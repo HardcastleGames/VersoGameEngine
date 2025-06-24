@@ -132,6 +132,7 @@
     <ClInclude Include="Application.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="MouseEnum.h" />
     <ClInclude Include="Verso.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>

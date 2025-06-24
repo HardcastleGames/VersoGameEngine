@@ -1,6 +1,7 @@
 #include <windows.h>
 #include "Window.h"
 #include <iostream>
+#include "MouseEnum.h"
 
 
 
@@ -120,6 +121,82 @@ LRESULT Verso::Window::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 			return 0;
 		}
 	}
+
+	case WM_LBUTTONUP:
+		if (pWindow && pWindow->m_Input)
+		{
+			pWindow->m_Input->MouseUp(MouseButton::Left);
+			return 0;
+		}
+
+
+	case WM_RBUTTONUP:
+		if (pWindow && pWindow->m_Input)
+		{
+			
+			pWindow->m_Input->MouseUp(MouseButton::Right);
+			return 0;
+		}
+
+	case WM_LBUTTONDOWN:
+		if (pWindow && pWindow->m_Input)
+		{
+			
+			pWindow->m_Input->MouseDown(MouseButton::Left);
+			return 0;
+		}
+
+	case WM_RBUTTONDOWN:
+		if (pWindow && pWindow->m_Input)
+		{
+			
+			pWindow->m_Input->MouseDown(MouseButton::Right);
+			return 0;
+		}
+
+	case WM_MBUTTONUP:
+		if (pWindow && pWindow->m_Input)
+		{
+		
+			pWindow->m_Input->MouseUp(MouseButton::Middle);
+			return 0;
+		}
+
+
+	case WM_MBUTTONDOWN:
+		if (pWindow && pWindow->m_Input)
+		{
+			
+			pWindow->m_Input->MouseDown(MouseButton::Middle);
+			return 0;
+		}
+		
+	case WM_XBUTTONDOWN:
+	{
+		WORD mouseButton = GET_XBUTTON_WPARAM(wParam);
+
+		if (mouseButton == XBUTTON1)
+			pWindow->m_Input->MouseDown(MouseButton::Extra1); // Back button
+		else if (mouseButton == XBUTTON2)
+			pWindow->m_Input->MouseDown(MouseButton::Extra2); // Forward button
+
+		return 0;
+	}
+
+	case WM_XBUTTONUP:
+	{
+		WORD mouseButton = GET_XBUTTON_WPARAM(wParam);
+
+		if (mouseButton == XBUTTON1)
+			pWindow->m_Input->MouseUp(MouseButton::Extra1); // Back button
+		else if (mouseButton == XBUTTON2)
+			pWindow->m_Input->MouseUp(MouseButton::Extra2); // Forward button
+
+		return 0;
+	}
+
+
+
 
 
 

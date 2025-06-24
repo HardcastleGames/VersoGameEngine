@@ -39,6 +39,9 @@
     <ClInclude Include="Input.h">
       <Filter>src\Input</Filter>
     </ClInclude>
+    <ClInclude Include="MouseEnum.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp">
