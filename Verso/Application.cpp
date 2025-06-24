@@ -2,19 +2,17 @@
 #include <iostream>
 #include "Window.h"
 
+
 namespace Verso
 {
-	Verso::Application::Application()
-	{
-	}
-
-	Verso::Application::~Application()
-	{
-	}
 
 	void Verso::Application::Run()
 	{
-		std::cout << "Running application..." << std::endl;
+		if (Input && Input->IsKeyDown('W'))
+		{
+			std::cout << Input->IsKeyDown('W') << std::endl;
+		}
+
 	}
 
 
@@ -27,7 +25,7 @@ namespace Verso
 		HINSTANCE hInstance = GetModuleHandle(NULL);
 		UINT nCmdShow = SW_SHOWDEFAULT;
 
-		Verso::Window* window = new Verso::Window();
+		Verso::Window* window = new Verso::Window(std::move(Input));
 		window->CreateAWindow(hInstance, nCmdShow);
 		while (true)
 		{

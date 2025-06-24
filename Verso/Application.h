@@ -1,17 +1,24 @@
-#pragma once
-#include "Core.h"
+#pragma once  
+#include "Core.h"  
+#include "Input.h"  
+#include <memory>
 
-namespace Verso {
-	class VERSO_API Application {
-	public:
+namespace Verso {  
+	class VERSO_API Application {  
+	public:  
 
-		Application();
-		~Application();
+		std::unique_ptr<Verso::Input> Input;  
 
+		Application()  
+		{  
+			Input = std::make_unique<Verso::Input>();
+		};  
+		~Application()  
+		{  
+		};  
 
-		void Initialize();
-		void Run();
+		void Initialize();  
+		void Run();  
 
-	};
+	};  
 }
-

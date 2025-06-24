@@ -1,10 +1,7 @@
 #include <windows.h>
 #include "Window.h"
+#include <iostream>
 
-
-Verso::Window::Window() {}
-
-Verso::Window::~Window() {}
 
 
 
@@ -38,6 +35,8 @@ bool Verso::Window::CreateAWindow(HINSTANCE hInstance, UINT nCmdShow)
 
 	ShowWindow(m_hwnd, nCmdShow);
 
+	return true;
+
 }
 
 
@@ -56,6 +55,8 @@ bool Verso::Window::ProcessMessages()
 			return false;
 		}
 	}
+
+	return true;
 }
 
 
@@ -64,22 +65,69 @@ bool Verso::Window::ProcessMessages()
 
 LRESULT Verso::Window::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+	// On WM_NCCREATE, store the Window* pointer in window user data
+	if (uMsg == WM_NCCREATE)
+	{
+		CREATESTRUCT* cs = reinterpret_cast<CREATESTRUCT*>(lParam);
+		Window* pWindow = reinterpret_cast<Window*>(cs->lpCreateParams);
+
+		// Associate the pointer with this hwnd
+		SetWindowLongPtr(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(pWindow));
+
+		// Also store hwnd in the Window object
+		pWindow->m_hwnd = hwnd;
+
+		return DefWindowProc(hwnd, uMsg, wParam, lParam);
+	}
+
+	// Retrieve Window* pointer for other messages
+	Window* pWindow = reinterpret_cast<Window*>(GetWindowLongPtr(hwnd, GWLP_USERDATA));
+
+
 	switch (uMsg)
 	{
+		
 	case WM_DESTROY:
+	{
 		PostQuitMessage(0);
 		return 0;
+	}
 
 	case WM_PAINT:
-	
+	{
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(hwnd, &ps);
 		FillRect(hdc, &ps.rcPaint, (HBRUSH)(COLOR_WINDOW + 1));
+		return 0;
 
 	}
+	case WM_KEYDOWN:
+	{
+		if (pWindow && pWindow->m_Input)
+		{
+			char Key = static_cast<char>(wParam);
+			pWindow->m_Input->KeyDown(Key);
+			return 0;
+		}
+	}
 
-	
-	
+	case WM_KEYUP:
+	{
+		if (pWindow && pWindow->m_Input)
+		{
+			char Key = static_cast<char>(wParam);
+			pWindow->m_Input->KeyUp(Key);
+			return 0;
+		}
+	}
+
+
+
+	//Dont remove this curely bracket by mistake
+	///////////////////////////////////////////////
+	}
+	///////////////////////////////////////////////
+
 	return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
 

@@ -1,12 +1,16 @@
 #pragma once
 #include <Windows.h>
+#include <memory>
+#include "Input.h"
 
 namespace Verso {
 	class Window {
 
 	public:
-		Window();
-		~Window();
+		std::unique_ptr<Verso::Input> m_Input;
+
+		Window(std::unique_ptr<Verso::Input> Input) : m_Input(std::move(Input)) {};
+		~Window() {};
 
 		HWND m_hwnd;
 
