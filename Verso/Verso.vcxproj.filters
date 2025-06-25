@@ -22,36 +22,51 @@
     <Filter Include="src\Input">
       <UniqueIdentifier>{050edd02-4e1b-4055-8276-6e6703183e7f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\CoreFiles">
+      <UniqueIdentifier>{4de69f84-3fdd-402c-8b14-6a4521e37486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EnumIncludes">
+      <UniqueIdentifier>{c089cc29-7e98-4ee7-ba19-3b3f29b7a884}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Event">
+      <UniqueIdentifier>{c7a0c1fa-2a82-4299-a117-ad610e4d1307}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Verso.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="Application.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="Core.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="Window.h">
       <Filter>src\Window</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
       <Filter>src\Input</Filter>
     </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>src\CoreFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Core.h">
+      <Filter>src\CoreFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Verso.h">
+      <Filter>src\CoreFiles</Filter>
+    </ClInclude>
     <ClInclude Include="MouseEnum.h">
-      <Filter>src</Filter>
+      <Filter>src\EnumIncludes</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>src\Event</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="Window.cpp">
       <Filter>src\Window</Filter>
     </ClCompile>
     <ClCompile Include="Input.cpp">
       <Filter>src\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>src\CoreFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>src\Event</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
