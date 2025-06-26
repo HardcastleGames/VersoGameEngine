@@ -78,7 +78,7 @@ LRESULT Verso::Window::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 		// Also store hwnd in the Window object
 		pWindow->m_hwnd = hwnd;
 
-		return DefWindowProc(hwnd, uMsg, wParam, lParam);
+		return TRUE;
 	}
 
 	// Retrieve Window* pointer for other messages
@@ -108,6 +108,7 @@ LRESULT Verso::Window::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 		{
 			char Key = static_cast<char>(wParam);
 			pWindow->m_Input->KeyDown(Key);
+			pWindow->m_Event->KeyPressed(Key);
 			return 0;
 		}
 	}

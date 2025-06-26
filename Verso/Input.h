@@ -2,6 +2,7 @@
 #include <map>
 #include "MouseEnum.h"
 
+
 namespace Verso {
 	class Input {
 	public:

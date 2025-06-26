@@ -28,14 +28,14 @@ bool Verso::Input::IsKeyDown(char Key)
 void Verso::Input::MouseDown(MouseButton button)
 {
 	MouseStates[button] = true;
-	std::cout << "Mouse down: " << static_cast<int>(button) << std::endl;
+	//std::cout << "Mouse down: " << static_cast<int>(button) << std::endl;
 	
 }
 
 void Verso::Input::MouseUp(MouseButton button)
 {
 	MouseStates[button] = false;
-	std::cout << "Mouse up: " << static_cast<int>(button) << std::endl;
+	//std::cout << "Mouse up: " << static_cast<int>(button) << std::endl;
 	
 }
 

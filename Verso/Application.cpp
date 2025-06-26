@@ -8,11 +8,10 @@ namespace Verso
 
 	void Verso::Application::Run()
 	{
-		if (Input && Input->IsKeyDown('W'))
-		{
-			std::cout << Input->IsKeyDown('W') << std::endl;
+		while (true)
+		{			
+			m_window->ProcessMessages();
 		}
-
 	}
 
 
@@ -25,14 +24,10 @@ namespace Verso
 		HINSTANCE hInstance = GetModuleHandle(NULL);
 		UINT nCmdShow = SW_SHOWDEFAULT;
 
-		Verso::Window* window = new Verso::Window(std::move(Input));
+		Verso::Window* window = new Verso::Window(Input, Event);
+		m_window = window;
 		window->CreateAWindow(hInstance, nCmdShow);
-		while (true)
-		{
 
-			Verso::Application::Run();
-			window->ProcessMessages();
-		}
 
 	}
 

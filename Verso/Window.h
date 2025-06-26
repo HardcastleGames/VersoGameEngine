@@ -2,14 +2,17 @@
 #include <Windows.h>
 #include <memory>
 #include "Input.h"
+#include "Event.h"
+
 
 namespace Verso {
 	class Window {
 
 	public:
-		std::unique_ptr<Verso::Input> m_Input;
+		std::shared_ptr<Verso::Input> m_Input;
+		std::shared_ptr<Verso::Event> m_Event;
 
-		Window(std::unique_ptr<Verso::Input> Input) : m_Input(std::move(Input)) {};
+		Window(std::shared_ptr<Verso::Input> Input, std::shared_ptr<Verso::Event> Event) : m_Input(Input), m_Event(Event) {};
 		~Window() {};
 
 		HWND m_hwnd;
