@@ -144,6 +144,7 @@ LRESULT Verso::Window::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 		{
 			
 			pWindow->m_Input->MouseDown(MouseButton::Left);
+			pWindow->m_Event->MousePressed(MouseButton::Left);
 			return 0;
 		}
 
@@ -152,6 +153,7 @@ LRESULT Verso::Window::WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lP
 		{
 			
 			pWindow->m_Input->MouseDown(MouseButton::Right);
+			pWindow->m_Event->MousePressed(MouseButton::Right);
 			return 0;
 		}
 
