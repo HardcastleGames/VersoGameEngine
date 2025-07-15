@@ -15,7 +15,7 @@ void Verso::Event::KeyPressed(char Key)
 	{
 		ob(Key);
 	}
-	std::cout << "Number of Key Observers: " << KeyObservers.size() << std::endl;
+	VERSO_CORE_INFO("Number of Key Observers: {}", KeyObservers.size());
 }
 
 void Verso::Event::MousePressed(MouseButton Mouse)
@@ -24,5 +24,5 @@ void Verso::Event::MousePressed(MouseButton Mouse)
 	{
 		ob(Mouse);
 	}
-	std::cout << "Number of Mouse Observers: " << MouseObservers.size() << std::endl;
+	VERSO_CORE_INFO("Number of Mouse Observers: {}", MouseObservers.size());
 }

@@ -31,6 +31,9 @@
     <Filter Include="src\Event">
       <UniqueIdentifier>{c7a0c1fa-2a82-4299-a117-ad610e4d1307}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Log">
+      <UniqueIdentifier>{2e5b118a-578c-4754-91bf-b54315391ef3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -54,6 +57,9 @@
     <ClInclude Include="Event.h">
       <Filter>src\Event</Filter>
     </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>src\Log</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -67,6 +73,9 @@
     </ClCompile>
     <ClCompile Include="Event.cpp">
       <Filter>src\Event</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>src\Log</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

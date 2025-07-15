@@ -1,6 +1,7 @@
 #include "Application.h"
 #include <iostream>
 #include "Window.h"
+#include "Log.h"
 
 
 namespace Verso
@@ -27,6 +28,9 @@ namespace Verso
 		Verso::Window* window = new Verso::Window(Input, Event);
 		m_window = window;
 		window->CreateAWindow(hInstance, nCmdShow);
+
+		Verso::Log::Init();	
+		VERSO_CORE_INFO("Verso Engine Initialized!");
 
 
 	}

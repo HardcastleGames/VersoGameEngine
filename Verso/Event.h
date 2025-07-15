@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include "MouseEnum.h"
+#include "Log.h"
 
 
 namespace Verso {
