@@ -34,6 +34,9 @@
     <Filter Include="src\Log">
       <UniqueIdentifier>{2e5b118a-578c-4754-91bf-b54315391ef3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Timer">
+      <UniqueIdentifier>{17e645ba-db05-4da1-afe5-77674b40044b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -60,6 +63,9 @@
     <ClInclude Include="Log.h">
       <Filter>src\Log</Filter>
     </ClInclude>
+    <ClInclude Include="CoreTimer.h">
+      <Filter>src\Timer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -76,6 +82,9 @@
     </ClCompile>
     <ClCompile Include="Log.cpp">
       <Filter>src\Log</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreTimer.cpp">
+      <Filter>src\Timer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

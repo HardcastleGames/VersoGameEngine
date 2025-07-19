@@ -4,12 +4,12 @@
 #include "Log.h"
 
 // Test functions to handle key and mouse events
-void KeyPressed(const char Key)
+void KeyPressed(const char Key)//this has to take in a const char key variable because thatat the event system expects
 {
 	VERSO_CLIENT_INFO("Key Pressed: {}", Key);
 }
 
-void MousePressed(Verso::MouseButton Mouse)
+void MousePressed(Verso::MouseButton Mouse)//this has to take in a Verso::MouseButton Mouse variable because that is what the event system expects
 {
 	switch (Mouse)
 	{
