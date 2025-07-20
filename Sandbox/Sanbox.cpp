@@ -35,22 +35,31 @@ void MousePressed(Verso::MouseButton Mouse)//this has to take in a Verso::MouseB
 
 }
 
+void TestFunction()
+{
+	VERSO_CLIENT_INFO("Test Function Called");
+}
+
 
 int main()
 {
 
-
+	//Init Start----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	Verso::Application* app = new Verso::Application();
-
-
 	app->Initialize();
+	//Init End------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 	app->Event->KeyBind(KeyPressed);
 	app->Event->MouseBind(MousePressed);
-	app->Run(); //This enters a while true loop so this has to be the last of our init logic
+	app->UserTimerManager->StartTimer(2.0f, false, TestFunction); // Start a timer that calls TestFunction after 2 seconds, not repeatable
 
 
 
 
 
+
+
+	app->Run(); //This enters a while true loop so this has to be the last of our logic
 	return 0;
 }

@@ -66,6 +66,12 @@
     <ClInclude Include="CoreTimer.h">
       <Filter>src\Timer</Filter>
     </ClInclude>
+    <ClInclude Include="UserTimer.h">
+      <Filter>src\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="UserTimerManager.h">
+      <Filter>src\Timer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">

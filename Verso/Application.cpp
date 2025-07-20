@@ -3,6 +3,7 @@
 #include "Window.h"
 #include "Log.h"
 #include "CoreTimer.h"
+#include "UserTimerManager.h"
 
 
 namespace Verso
@@ -10,16 +11,12 @@ namespace Verso
 	//This is the main loop of the application.
 	void Verso::Application::Run()
 	{
-		Verso::CoreTimer* timer = new Verso::CoreTimer();
-		timer->start();
 		while (true)
 		{
-			timer->Tick();
-			VERSO_CORE_INFO("Delta Time: {0}", timer->GetDeltaTime());
+			CoreTimer->Tick();
 			m_window->ProcessMessages();
-
+			UserTimerManager->Update(CoreTimer->GetDeltaTime());
 		}
-		delete timer;
 	}
 
 
@@ -38,6 +35,9 @@ namespace Verso
 
 		Verso::Log::Init();
 		VERSO_CORE_INFO("Verso Engine Initialized!");
+
+		CoreTimer->start();
+
 
 
 	}

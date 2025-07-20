@@ -53,7 +53,6 @@ namespace Verso {
 		m_FrameTimeDif = m_CurrentFrameTime - m_LastFrameTime;
 		m_DeltaTime = m_FrameTimeDif.count();
 		m_LastFrameTime = m_CurrentFrameTime;
-		VERSO_CORE_INFO("Delta Time: {0}", m_DeltaTime);
 
 
 

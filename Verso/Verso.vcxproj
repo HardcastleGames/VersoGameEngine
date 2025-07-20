@@ -140,6 +140,8 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="MouseEnum.h" />
+    <ClInclude Include="UserTimer.h" />
+    <ClInclude Include="UserTimerManager.h" />
     <ClInclude Include="Verso.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
